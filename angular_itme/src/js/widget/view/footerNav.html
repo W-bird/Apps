@@ -1,0 +1,6 @@
+<div class="tabs tabs-icon-top">
+  <a ng-class="{active: curIndex===$index}" ng-click="mark($index)" ng-repeat="item in list" href="{{item.href}}" class="tab-item">
+    <i class="icon {{item.ion}}"></i>
+    {{item.name}}
+  </a>
+</div>

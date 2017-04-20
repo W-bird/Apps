@@ -1,0 +1,36 @@
+.ad{
+	width: 100%;
+	height: 40px;
+}
+.ad img{
+	width: 100%;
+	height: 100%;
+}
+.box {
+	height: 120px;
+	width: 100%;
+}
+.box img{
+	width: 100%;
+	height: 100%;
+}
+.tab-item{
+	opacity: 1;
+}
+.tab-item.activated, .tab-item.active{
+	color: rgb(255, 72, 145);
+}
+
+.home-adds{
+	width: 100%;
+    line-height: 40px;
+    background-color: #fff;
+    color: #fff;
+    text-align: center;
+    position: relative;
+	font-size: 16px;
+}
+.home-adds i{
+	color: rgb(255, 72, 145);
+	font-weight: bold;
+}

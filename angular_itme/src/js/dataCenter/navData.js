@@ -1,31 +1,32 @@
-app.factory('navData', [function(){
+app.factory('navData', function(){
+	//导航条数据中心
 	var list = [{
-		name: 'home',
+		name: '首页',
 		href: '#/home',
 		ion: 'ion-home'
 	},{
-		name: 'cart',
+		name: '购物车',
 		href: '#/cart',
-		ion: 'ion-star'
+		ion: 'ion-android-cart'
 	},{
-		name: 'info',
+		name: '信息',
 		href: '#/info',
 		ion: 'ion-settings'
 	},{
-		name: 'login',
+		name: '个人',
 		href: '#/login',
-		ion: 'ion-document'
+		ion: 'ion-person'
 	}];
 	return {
-		getList:function() {
-			return list;
+		getList: function(){
+			return list;	 	
 		},
-		getCurIndex:function(name) {
-			for(var i=0; i<list.length; i++) {
-				if (name === list[i].name) {
+		getCurIndex: function(name){
+			for(var i =0; i < list.length; i++){
+				if(name === list[i].href) {
 					return i;
 				}
-			}
+			}	 	
 		}
 	}
-}])
+})

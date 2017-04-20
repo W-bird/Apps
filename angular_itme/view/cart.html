@@ -1,1 +1,10 @@
-cart.html
+<div class="bar bar-header bar-light">
+  <h1 class="title">购物车---{{name}}</h1>
+</div>
+<ion-content class="has-header has-footer">
+	<div class="list">
+
+	    <single-cart cartflag="cart" ng-repeat="item in list" data="item"></single-cart>
+
+	</div>
+</ion-content>

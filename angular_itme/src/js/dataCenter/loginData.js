@@ -1,13 +1,13 @@
 app.factory('loginData', ['$http', 'MyMd5', function(http, MyMd5){
 	var coreLoginData = null;
 
-	var randomString = function(len){
-		len = len || 32;
-		 for (var $chars = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678", maxPos = $chars.length, pwd = "", i = 0; i < len; i++)
+	var randomString = function(len) {
+        len = len || 32;
+        for (var $chars = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678", maxPos = $chars.length, pwd = "", i = 0; i < len; i++)
             pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
-        return pwd;
-	}
-	var nonce = randomString();
+        return pwd
+    }
+    var nonce = randomString();
 
     var getMd5 = function(nonce, phoneNum) {
        var token = "gDclCjcZ#89EIJio(7"
@@ -15,8 +15,8 @@ app.factory('loginData', ['$http', 'MyMd5', function(http, MyMd5){
        return MyMd5.createHash(nonce + phone + token).toUpperCase()
    }
 
-   return{
-   		submit: function(scope){
+	return {
+		submit: function(scope){
 			http({
 				url: "http://as-vip.missfresh.cn/v1/auth/verify-captcha?device_id=b2fbe2a8bd6a74aab4a2f83e237fe6eb&env=web&phone_number="+ scope.userInfo.phone +"&platform=web&tdk=149267165802885344801&uuid=b2fbe2a8bd6a74aab4a2f83e237fe6eb&version=2.3.7",
 				method: 'post',
@@ -49,5 +49,6 @@ app.factory('loginData', ['$http', 'MyMd5', function(http, MyMd5){
 				console.log('error'); 	
 			});
 		}
-   }
+	}
+
 }])

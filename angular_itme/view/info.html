@@ -1,1 +1,9 @@
-info.html
+<div class="bar bar-header bar-light">
+  <h1 class="title">信息---{{name}}</h1>
+</div>
+<ion-content class="has-header has-footer">
+	<button ng-click="showLogin()" ng-show="!login" class="button  button-full button-positive">
+		去登陆
+	</button>
+	<h1 ng-show="login">登陆成功</h1>
+</ion-content>
