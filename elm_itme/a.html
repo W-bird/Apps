@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html, body{
+			height: 100%;
+		}
+		.box{
+			height: 100%;
+			text-align: center;
+			line-height: 80px;
+			overflow: hidden;
+		}
+		.box a{
+			color: #fff;
+		}
+		#diZhi{
+			background-color: red;
+		}
+		#lieBiao{
+			background-color: blue;
+		}
+		#xiangQing{
+			background-color: pink;
+		}
+		#shangJia{
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="diZhi"><a href="#lieBiao">地址搜索页</a></div>
+	<div class="box" id="lieBiao"><a href="#xiangQing">商家列表页</a></div>
+	<div class="box" id="xiangQing"><a href="#shangJia">食物详情页</a></div>
+	<div class="box" id="shangJia"><a href="#diZhi">商家搜索页</a></div>
+
+	<script src="js/zepto.js"></script>
+	<script>
+		function init() {
+			var hash = location.hash || '#diZhi',
+				dom = $(hash);
+			dom.show();
+			dom.siblings().hide();
+		}
+		init();
+		window.onhashchange = init;
+	</script>
+</body>
+</html>
